@@ -1,0 +1,6 @@
+.idea
+data/**
+**/target
+**/*.iml
+**/logs
+**/reports

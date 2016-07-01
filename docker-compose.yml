@@ -1,0 +1,10 @@
+identity:
+  image: leansw/auth-server
+  ports:
+    - "8081:8080"
+  environment:
+    - ACTIVE_PROFILE=docker
+  extra_hosts:
+    - "mysql-server:10.251.27.18"
+    - "gocd-server:10.174.231.41"
+    - "eureka-server:121.42.193.129"

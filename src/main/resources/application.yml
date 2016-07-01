@@ -1,0 +1,43 @@
+debug: true
+
+gocd:
+  server:
+    host: http://gocd-server:8153/go
+    username: admin
+    password: badger
+
+spring:
+  thymeleaf:
+    cache: true
+
+server:
+  contextPath: /uaa
+  port: 8080
+
+security:
+  ignored: /css/**,/js/**,/fonts/**,/img/**,/favicon.ico,/webjars/**, /info, /management
+  user:
+    password: password
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8080/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize
+      clientId: cd-metrics-ui
+      clientSecret: secret
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
+          -----END PUBLIC KEY-----
+
+eureka:
+  instance:
+      preferIpAddress: true
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/

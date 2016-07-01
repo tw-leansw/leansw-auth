@@ -1,0 +1,10 @@
+gocd:
+  server:
+    host: http://gocd-server:8153/go
+    username: admin
+    password: badger
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
