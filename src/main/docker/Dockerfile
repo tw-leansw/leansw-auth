@@ -1,4 +1,4 @@
-FROM registry.aliyuncs.com/leansw/auth-server-dep
+FROM registry.aliyuncs.com/leansw/auth-server:dep
 
 VOLUME /tmp
 ADD entrypoint.sh entrypoint.sh
