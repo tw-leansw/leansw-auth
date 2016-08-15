@@ -1,6 +1,4 @@
-FROM java:8-alpine
-RUN apk add --no-cache bash && \
-    apk add --no-cache curl
+FROM registry.aliyuncs.com/leansw/java-base
 EXPOSE 8081
 VOLUME /tmp
 COPY lib /lean/java/lib
